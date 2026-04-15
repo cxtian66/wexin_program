@@ -3,7 +3,7 @@ App({
   onLaunch() {
     // 初始化云开发环境
     wx.cloud.init({
-      env: 'cloudbase-9gvvrn33012dca1d',
+      env: 'cloudbase',
       traceUser: true
     })
 
