@@ -1,0 +1,119 @@
+/* list.wxss */
+.filter-bar {
+  display: flex;
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin: 20rpx 0;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.filter-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24rpx 0;
+  font-size: 32rpx;
+  color: #333;
+  border-right: 1rpx solid #f0f0f0;
+}
+
+.filter-item:last-child {
+  border-right: none;
+}
+
+.filter-icon {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.record-list {
+  background-color: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.record-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.record-item:last-child {
+  border-bottom: none;
+}
+
+.record-left {
+  flex: 1;
+  margin-right: 20rpx;
+}
+
+.record-category {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.record-date {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.record-remark {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  line-height: 1.4;
+}
+
+.record-amount {
+  font-size: 36rpx;
+  font-weight: bold;
+  min-width: 150rpx;
+  text-align: right;
+}
+
+.record-amount.income {
+  color: #07c160;
+}
+
+.record-amount.expense {
+  color: #ff4d4f;
+}
+
+.empty-record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  color: #07c160;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+.no-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  color: #999;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}

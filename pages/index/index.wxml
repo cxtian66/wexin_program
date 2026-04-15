@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- 顶部欢迎信息 -->
+  <view class="welcome">
+    <text class="welcome-text">你好，{{userInfo.nickName || '用户'}}</text>
+    <text class="welcome-date">{{currentDate}}</text>
+  </view>
+
+  <!-- 收支概览卡片 -->
+  <view class="card overview-card">
+    <view class="overview-header">
+      <text class="overview-title">今日收支</text>
+      <text class="overview-more" bindtap="goToList">查看更多</text>
+    </view>
+    <view class="overview-content">
+      <view class="overview-item">
+        <text class="overview-label">收入</text>
+        <text class="overview-amount income">¥{{todayIncome}}</text>
+      </view>
+      <view class="overview-divider"></view>
+      <view class="overview-item">
+        <text class="overview-label">支出</text>
+        <text class="overview-amount expense">¥{{todayExpense}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 最近记账记录 -->
+  <view class="card">
+    <view class="card-header">
+      <text class="card-title">最近记账</text>
+    </view>
+    <view class="record-list">
+      <view wx:for="{{recentRecords}}" wx:key="_id" class="record-item" bindtap="goToDetail">
+        <view class="record-left">
+          <text class="record-category">{{item.categoryName}}</text>
+          <text class="record-time">{{item.time}}</text>
+        </view>
+        <text class="record-amount {{item.type === 1 ? 'income' : 'expense'}}">
+          {{item.type === 1 ? '+' : '-'}}¥{{item.amount}}
+        </text>
+      </view>
+      <view wx:if="{{recentRecords.length === 0}}" class="empty-record">
+        <text>暂无记账记录</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快速添加按钮 -->
+  <view class="add-btn" bindtap="goToAdd">
+    <text class="add-btn-icon">+</text>
+  </view>
+</view>

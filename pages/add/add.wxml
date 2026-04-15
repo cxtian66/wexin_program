@@ -1,0 +1,70 @@
+<view class="container">
+  <!-- 收支类型选择 -->
+  <view class="type-selector">
+    <view class="type-item {{type === 1 ? 'active' : ''}}" bindtap="selectType" data-type="1">
+      <text class="type-text">收入</text>
+    </view>
+    <view class="type-item {{type === 2 ? 'active' : ''}}" bindtap="selectType" data-type="2">
+      <text class="type-text">支出</text>
+    </view>
+  </view>
+
+  <!-- 金额输入 -->
+  <view class="amount-input">
+    <text class="amount-symbol">¥</text>
+    <input 
+      class="amount-field" 
+      type="number" 
+      placeholder="0.00" 
+      value="{{amount}}" 
+      bindinput="onAmountChange"
+    />
+  </view>
+
+  <!-- 分类选择 -->
+  <view class="section">
+    <text class="section-title">分类</text>
+    <view class="category-list">
+      <view 
+        wx:for="{{categories}}" 
+        wx:key="_id" 
+        class="category-item {{selectedCategory === item._id ? 'active' : ''}}" 
+        bindtap="selectCategory" 
+        data-category="{{item}}"
+      >
+        <view class="category-icon" style="background-color: {{item.color}}">
+          <text>{{item.icon}}</text>
+        </view>
+        <text class="category-name">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 日期选择 -->
+  <view class="section">
+    <text class="section-title">日期</text>
+    <input 
+      class="date-input" 
+      type="text" 
+      value="{{date}}" 
+      bindtap="openDatePicker"
+      placeholder="选择日期"
+    />
+  </view>
+
+  <!-- 备注输入 -->
+  <view class="section">
+    <text class="section-title">备注</text>
+    <textarea 
+      class="remark-input" 
+      placeholder="添加备注" 
+      value="{{remark}}" 
+      bindinput="onRemarkChange"
+    ></textarea>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="btn btn-primary" bindtap="saveRecord">
+    {{isEdit ? '更新记录' : '保存记录'}}
+  </view>
+</view>

@@ -1,0 +1,158 @@
+/* index.wxss */
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+
+.welcome-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.welcome-date {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.overview-card {
+  margin-bottom: 30rpx;
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.overview-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.overview-more {
+  font-size: 28rpx;
+  color: #07c160;
+}
+
+.overview-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.overview-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview-label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.overview-amount {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.overview-amount.income {
+  color: #07c160;
+}
+
+.overview-amount.expense {
+  color: #ff4d4f;
+}
+
+.overview-divider {
+  width: 1rpx;
+  height: 80rpx;
+  background-color: #f0f0f0;
+}
+
+.card-header {
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.record-list {
+  margin-top: 10rpx;
+}
+
+.record-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.record-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-category {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+.record-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.record-amount {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.record-amount.income {
+  color: #07c160;
+}
+
+.record-amount.expense {
+  color: #ff4d4f;
+}
+
+.empty-record {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 100rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #07c160;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4rpx 12rpx rgba(7, 193, 96, 0.3);
+}
+
+.add-btn-icon {
+  font-size: 60rpx;
+  color: #fff;
+  line-height: 1;
+}

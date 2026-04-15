@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- 时间范围选择 -->
+  <view class="time-selector">
+    <view class="time-item {{selectedTimeRange === 'week' ? 'active' : ''}}" bindtap="selectTimeRange" data-range="week">
+      <text>周</text>
+    </view>
+    <view class="time-item {{selectedTimeRange === 'month' ? 'active' : ''}}" bindtap="selectTimeRange" data-range="month">
+      <text>月</text>
+    </view>
+    <view class="time-item {{selectedTimeRange === 'year' ? 'active' : ''}}" bindtap="selectTimeRange" data-range="year">
+      <text>年</text>
+    </view>
+  </view>
+
+  <!-- 收支概览 -->
+  <view class="card overview-card">
+    <view class="overview-header">
+      <text class="overview-title">收支概览</text>
+    </view>
+    <view class="overview-content">
+      <view class="overview-item">
+        <text class="overview-label">总收入</text>
+        <text class="overview-amount income">¥{{totalIncome}}</text>
+      </view>
+      <view class="overview-divider"></view>
+      <view class="overview-item">
+        <text class="overview-label">总支出</text>
+        <text class="overview-amount expense">¥{{totalExpense}}</text>
+      </view>
+      <view class="overview-divider"></view>
+      <view class="overview-item">
+        <text class="overview-label">结余</text>
+        <text class="overview-amount {{balance >= 0 ? 'income' : 'expense'}}">¥{{balance}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 收支对比图表 -->
+  <view class="card">
+    <view class="card-header">
+      <text class="card-title">收支对比</text>
+    </view>
+    <view class="chart-container">
+      <canvas canvas-id="balanceChart" style="width: 100%; height: 300rpx;"></canvas>
+    </view>
+  </view>
+
+  <!-- 分类统计图表 -->
+  <view class="card">
+    <view class="card-header">
+      <text class="card-title">分类统计</text>
+      <view class="type-toggle">
+        <text class="toggle-item {{selectedType === 2 ? 'active' : ''}}" bindtap="selectType" data-type="2">支出</text>
+        <text class="toggle-item {{selectedType === 1 ? 'active' : ''}}" bindtap="selectType" data-type="1">收入</text>
+      </view>
+    </view>
+    <view class="chart-container">
+      <canvas canvas-id="categoryChart" style="width: 100%; height: 400rpx;"></canvas>
+    </view>
+    <view class="category-list">
+      <view wx:for="{{categoryStats}}" wx:key="category" class="category-item">
+        <text class="category-name">{{item.categoryName}}</text>
+        <text class="category-amount">{{item.amount}}元</text>
+        <text class="category-percent">{{item.percentage}}%</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 月度趋势图表 -->
+  <view class="card">
+    <view class="card-header">
+      <text class="card-title">月度趋势</text>
+    </view>
+    <view class="chart-container">
+      <canvas canvas-id="trendChart" style="width: 100%; height: 300rpx;"></canvas>
+    </view>
+  </view>
+</view>
